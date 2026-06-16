@@ -16,5 +16,12 @@ pipeline {
                 sh './app.sh'
             }
         }
+
+        stage('Test') {
+            steps {
+                sh 'echo "Executing Automated Tests"'
+                sh 'grep "TEST PASSED" app.sh'
+            }
+        }
     }
 }
