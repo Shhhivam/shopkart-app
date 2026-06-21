@@ -35,6 +35,7 @@ pipeline {
     post {
         success {
             archiveArtifacts artifacts: 'build/*.txt'
+            archiveArtifacts artifacts: 'build/*.html'
         }
     }
 }
