@@ -23,5 +23,12 @@ pipeline {
                 sh 'grep "TEST PASSED" app.sh'
             }
         }
+
+        stage('Artifact Generation') {
+            steps {
+                sh 'ls -la build'
+                sh 'cat build/shopkart-artifact.txt'
+            }
+        }
     }
 }
