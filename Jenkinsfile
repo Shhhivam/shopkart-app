@@ -33,9 +33,19 @@ pipeline {
     }
 
     post {
-        success {
-            archiveArtifacts artifacts: 'build/*.txt'
-            archiveArtifacts artifacts: 'build/*.html'
-        }
+
+    success {
+        echo 'BUILD SUCCESSFUL'
+        archiveArtifacts artifacts: 'build/*.txt'
+        archiveArtifacts artifacts: 'build/*.html'
     }
+
+    failure {
+        echo 'BUILD FAILED'
+    }
+
+    always {
+        echo 'PIPELINE EXECUTION COMPLETED'
+    }
+}
 }
